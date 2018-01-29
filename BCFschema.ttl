@@ -1,0 +1,309 @@
+# baseURI: http://example.org/bcfschema
+
+@prefix : <http://example.org/bcfschema#> .
+@prefix fbf: <http://example.org/bcfschema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/bcfschema>
+  rdf:type owl:Ontology ;
+  owl:versionInfo "v 0.01 2018-01-29"
+  rdfs:comment "Ontology for BIM Collaboration Format" ;
+.
+fbf:BimSnippet
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+fbf:Comment
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+fbf:DocumentReference
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+fbf:File
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+fbf:Header
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+fbf:Markup
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+fbf:RelatedTopic
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+fbf:Topic
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+fbf:Viewpoint
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+fbf:Viewpoints
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+fbf:containsBimSnippet
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range fbf:BimSnippet ;
+.
+fbf:containsComment
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fbf:Markup ;
+  rdfs:range fbf:Comment ;
+.
+fbf:containsDocumentReference
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range fbf:DocumentReference ;
+.
+fbf:containsFile
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fbf:Header ;
+  rdfs:range fbf:File ;
+.
+fbf:containsHeader
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fbf:Markup ;
+  rdfs:range fbf:Header ;
+.
+fbf:containsRelatedTopic
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range fbf:RelatedTopic ;
+.
+fbf:containsTopic
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fbf:Markup ;
+  rdfs:range fbf:Topic ;
+.
+fbf:containsViewpoint
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fbf:Comment ;
+  rdfs:range fbf:Viewpoint ;
+.
+fbf:containsViewpoints
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fbf:Markup ;
+  rdfs:range fbf:Viewpoints ;
+.
+fbf:hasAssignedTo
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range xsd:string ;
+.
+fbf:hasAuthor
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Comment ;
+  rdfs:range xsd:string ;
+.
+fbf:hasBimSnippetIsExternal
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:BimSnippet ;
+  rdfs:range xsd:boolean ;
+.
+fbf:hasBimSnippetReference
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:BimSnippet ;
+  rdfs:range xsd:string ;
+.
+fbf:hasComment
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Comment ;
+  rdfs:range xsd:string ;
+.
+fbf:hasCommentDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Comment ;
+  rdfs:range xsd:dateTime ;
+.
+fbf:hasCommentGuid
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Comment ;
+  rdfs:range xsd:string ;
+.
+fbf:hasCommentModifiedAuthor
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Comment ;
+  rdfs:range xsd:string ;
+.
+fbf:hasCommentModifiedDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Comment ;
+  rdfs:range xsd:dateTime ;
+.
+fbf:hasCreationAuthor
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range xsd:string ;
+.
+fbf:hasCreationDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range xsd:dateTime ;
+.
+fbf:hasDocumentReferenceDescription
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:DocumentReference ;
+  rdfs:range xsd:string ;
+.
+fbf:hasDocumentReferenceGuid
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:DocumentReference ;
+  rdfs:range xsd:string ;
+.
+fbf:hasDocumentReferenceIsExternal
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:DocumentReference ;
+  rdfs:range xsd:boolean ;
+.
+fbf:hasDueDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range xsd:dateTime ;
+.
+fbf:hasFileDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:File ;
+  rdfs:range xsd:dateTime ;
+.
+fbf:hasFileIsExternal
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:File ;
+  rdfs:range xsd:boolean ;
+.
+fbf:hasFileName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:File ;
+  rdfs:range xsd:string ;
+.
+fbf:hasFileReference
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:File ;
+  rdfs:range xsd:string ;
+.
+fbf:hasIfcProject
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:File ;
+  rdfs:range xsd:string ;
+.
+fbf:hasIfcSpatialStructureElement
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:File ;
+  rdfs:range xsd:string ;
+.
+fbf:hasLabels
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range xsd:string ;
+.
+fbf:hasModifiedAuthor
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range xsd:string ;
+.
+fbf:hasModifiedDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range xsd:dateTime ;
+.
+fbf:hasPriority
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range xsd:string ;
+.
+fbf:hasReferenceLink
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range xsd:string ;
+.
+fbf:hasReferenceSchema
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:BimSnippet ;
+  rdfs:range xsd:string ;
+.
+fbf:hasReferencedDocument
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:DocumentReference ;
+  rdfs:range xsd:string ;
+.
+fbf:hasRelatedTopicGuid
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:RelatedTopic ;
+  rdfs:range xsd:string ;
+.
+fbf:hasSnapshot
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Viewpoints ;
+  rdfs:range xsd:string ;
+.
+fbf:hasSnippetType
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:BimSnippet ;
+  rdfs:range xsd:string ;
+.
+fbf:hasStage
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range xsd:string ;
+.
+fbf:hasTitle
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range xsd:string ;
+.
+fbf:hasTopicDescription
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range xsd:string ;
+.
+fbf:hasTopicGuid
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range xsd:string ;
+.
+fbf:hasTopicIndex
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range xsd:integer ;
+.
+fbf:hasTopicStatus
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range xsd:string ;
+.
+fbf:hasTopicType
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Topic ;
+  rdfs:range xsd:string ;
+.
+fbf:hasViewpoint
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Viewpoints ;
+  rdfs:range xsd:string ;
+.
+fbf:hasViewpointGuid
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Viewpoint ;
+  rdfs:range xsd:string ;
+.
+fbf:hasViewpointsGuid
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Viewpoints ;
+  rdfs:range xsd:string ;
+.
+fbf:hasViewpointsIndex
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fbf:Viewpoints ;
+  rdfs:range xsd:integer ;
+.

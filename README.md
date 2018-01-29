@@ -1,1 +1,1 @@
-"# BCFschema" 
+# BCFschema
